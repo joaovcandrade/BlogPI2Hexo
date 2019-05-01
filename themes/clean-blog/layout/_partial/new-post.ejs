@@ -1,0 +1,11 @@
+<% max = (page.posts.data.length > 3) ? 3 : page.posts.data.length; %>
+<% for(i = 0; i < max; i++){ %>
+  <div class="col-sm-12 col-md-4 w-100">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%- page.posts.data[i].title %></h5>
+        <p class="card-text">Um exemplo de texto rápido</p>
+      </div>
+    </div>
+</div>
+<% }; %>
