@@ -16,7 +16,7 @@
 
 <!-- Main Content -->
 <div class="container">
-    <h1 class="h5 ml-3"> Mais recentes </h1>
+    <h1 class="h5 ml-3 font-weight-bold"> Mais recentes </h1>
     <hr class="mb-5">
   <div class="row">
     <div class="card-deck w-100">
@@ -34,7 +34,7 @@
     <hr>
     <div class="row">
 
-        <div class="col-12">
+        <div class="col-12 ">
             <% page.posts.each(function(item){ %>
                 <%- partial('_partial/article-index', {item: item}) %>
             <% }); %>
