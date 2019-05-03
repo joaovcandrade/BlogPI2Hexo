@@ -24,22 +24,31 @@
     </div>
   </div>
 
-  <!-- apagar --><br><br>
-  <%- partial('_partial/tag-card') %>
-  <br>
-  <%- partial('_partial/categories-card') %>
-  <!-- apagar --><br><br>
+<br><br>
 
     <h1 class="h5 ml-3"> Veja também</h1>
     <hr>
     <div class="row">
 
-        <div class="col-12 ">
+        <div class="col-9 ">
+
             <% page.posts.each(function(item){ %>
                 <%- partial('_partial/article-index', {item: item}) %>
             <% }); %>
+       </div>
+        <div class="col3 ">
+              <%- partial('_partial/tag-card') %>
+              <br>
+              <%- partial('_partial/categories-card') %>
+      </div>
 
             <%- partial('_partial/pagination') %>
-        </div>
+
+
     </div>
+
+
+
+
+
 </div>

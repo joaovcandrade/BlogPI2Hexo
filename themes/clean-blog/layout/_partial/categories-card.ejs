@@ -1,3 +1,17 @@
-    <% site.categories.forEach(categ => {%>
-      <%- categ.name %>
-    <%})%>
+<div class="container">
+  <div class="nav justify-content-end">
+<div class="row">
+  <div class="col-3">
+  <div class="card text-center" style="width: 12rem;">
+    <div class="card-header">
+    Categorias
+  </div>
+  <div class="card-body">
+    <div class="col-sm-">
+    <blockquote class="blockquote mb-0">
+          <% site.categories.forEach(categ => {%>
+        <%- categ.name %><br>
+      <%})%>
+    </blockquote>
+  </div>
+  </div>
