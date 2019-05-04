@@ -1,17 +1,24 @@
+<%
+  var auxTag;
+%>
 <div class="container">
   <div class="nav justify-content-end">
 <div class="row">
   <div class="col-3">
-<div class="card text-center" style="width: 12rem;">
+  <div class="card text-center" style="width: 12rem;">
     <div class="card-header">
     Tags
   </div>
   <div class="card-body">
     <div class="col-sm-">
     <blockquote class="blockquote mb-0">
-      <% site.tags.forEach(tag => {%>
-        <%- tag.name %> <br>
+          <% site.tags.forEach(tag => {%>
+            <%auxTag = config.root + tag.path;%>
+            <a class="btn btn-link" href = <%-auxTag%>>
+              <%- tag.name %>
+            </a>
+            <br>
       <%})%>
     </blockquote>
   </div>
-</div>
+  </div>

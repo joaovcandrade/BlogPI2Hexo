@@ -1,3 +1,6 @@
+<%
+  var auxCat;
+%>
 <div class="container">
   <div class="nav justify-content-end">
 <div class="row">
@@ -10,7 +13,11 @@
     <div class="col-sm-">
     <blockquote class="blockquote mb-0">
           <% site.categories.forEach(categ => {%>
-        <%- categ.name %><br>
+            <%auxCat = config.root + categ.path;%>
+            <a class="btn btn-link" href = <%-auxCat%>>
+              <%- categ.name %>
+            </a>
+            <br>
       <%})%>
     </blockquote>
   </div>
