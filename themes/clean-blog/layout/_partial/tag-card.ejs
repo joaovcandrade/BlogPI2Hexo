@@ -1,23 +1,21 @@
 <%
   var auxTag;
 %>
-<div class="container">
-  <div class="nav justify-content-end">
-<div class="row">
-  <div class="col-3">
-  <div class="card text-center" style="width: 12rem;">
-    <div class="card-header">
-    Tags
+
+<div class="row p-3">
+  <div class="card w-100 shadow flow-animation">
+    <div class="card-header pt-4 text-center">
+    <h1 class="h5 font-weight-bold">Tags</h1>
   </div>
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-          <% site.tags.forEach(tag => {%>
-            <%auxTag = config.root + tag.path;%>
-            <a class="badge badge-secondary text-uppercase font-italic card-fast" href = <%-auxTag%>>
-              #<%- tag.name %>
-            </a>
-            <br>
-      <%})%>
-    </blockquote>
+  <div class="card-body p-0">
+    <div class="d-inline-flex flex-wrap">
+      <% site.tags.forEach(tag => {%>
+          <a class="badge badge-secondary text-uppercase font-italic card-fast flow-animation m-1" href = <%-config.root + tag.path%> style="white-space: normal;">
+          #<%- tag.name %>
+        </a>
+        <br>
+        <%})%>
+    </div>
   </div>
   </div>
+</div>

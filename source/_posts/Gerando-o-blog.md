@@ -1,6 +1,7 @@
 ---
 title: Gerando o blog
 date: 30-04-2019 09:12:12
+resume: "Um resumo"
 categories:
 - [Construindo o blog, Primeiros passos]
 tags:

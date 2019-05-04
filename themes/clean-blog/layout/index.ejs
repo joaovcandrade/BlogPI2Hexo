@@ -20,7 +20,10 @@
     <hr class="mb-5">
   <div class="row">
     <div class="card-deck w-100">
-    <%- partial('_partial/new-post') %>
+      <% page.posts.each(function(item){ %>
+          <%- partial('_partial/new-post', {item: item}) %>
+      <% }); %>
+
     </div>
   </div>
 
@@ -30,13 +33,14 @@
     <hr>
     <div class="row">
 
-        <div class="col-9 ">
+        <div class="col-12 col-md-9 ">
 
             <% page.posts.each(function(item){ %>
                 <%- partial('_partial/article-index', {item: item}) %>
             <% }); %>
+
        </div>
-        <div class="col3 ">
+        <div class="col-12 col-md-3 ">
               <%- partial('_partial/tag-card') %>
               <br>
               <%- partial('_partial/categories-card') %>

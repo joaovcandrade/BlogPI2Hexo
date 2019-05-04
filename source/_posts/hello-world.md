@@ -1,5 +1,6 @@
 ---
 title: Hello World
+resume: "Um resumo"
 tags: tag1 tag2
 categories: cat1 cat2
 author: anônimo
