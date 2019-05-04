@@ -1,7 +1,8 @@
 ---
 title: {{ title }}
+resume: "Breve resumo"
 subtitle:
 date: {{ date }}
-author: Anônimo
+author: a0
 tags:
 ---

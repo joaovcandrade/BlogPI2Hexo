@@ -1,20 +1,21 @@
-<div class="card my-3 border-0">
+<div class="card flow-animation my-3 border-0">
   <a href="<%- config.root %><%- item.path %>" style="text-decoration: none">
     <div class="card-body shadow">
-      <div class="post-preview">
+      <div class="post-preview text-truncate">
             <h2 class="post-title m-0">
-                <%- item.title || theme.default_post_title || "Untitled" %>
+                <%- item.title || theme.default_post_title || "Sem título" %>
             </h2>
             <% if (item.subtitle && item.subtitle.length) { %>
                 <h3 class="post-subtitle">
                     <%- item.subtitle %>
                 </h3>
             <% } %>
-            <p>Pequeno texto</p>
-        <p class="post-meta m-0">
+            <p class="text-truncate"><%- item.resume %></p>
+        <p class="post-meta m-0 text-truncate">
             <!-- Date and Author -->
+            <i class="fa fa-clock-o"></i>&nbsp
             <% if(item.author) { %>
-                Postado por <%- item.author %> em
+                Postado por <%- site.data.authors[item.author][0] %> em
             <% } %>
             <%= item.date.format(config.date_format) %>
         </p>
