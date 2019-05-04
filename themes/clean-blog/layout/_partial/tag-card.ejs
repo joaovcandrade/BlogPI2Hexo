@@ -10,12 +10,11 @@
     Tags
   </div>
   <div class="card-body">
-    <div class="col-sm-">
     <blockquote class="blockquote mb-0">
           <% site.tags.forEach(tag => {%>
             <%auxTag = config.root + tag.path;%>
-            <a class="btn btn-link" href = <%-auxTag%>>
-              <%- tag.name %>
+            <a class="badge badge-secondary text-uppercase font-italic card-fast" href = <%-auxTag%>>
+              #<%- tag.name %>
             </a>
             <br>
       <%})%>

@@ -10,11 +10,10 @@
     Categorias
   </div>
   <div class="card-body">
-    <div class="col-sm-">
     <blockquote class="blockquote mb-0">
           <% site.categories.forEach(categ => {%>
             <%auxCat = config.root + categ.path;%>
-            <a class="btn btn-link" href = <%-auxCat%>>
+            <a class="badge badge-secondary text-uppercase font-italic card-fast" href = <%-auxCat%>>
               <%- categ.name %>
             </a>
             <br>
