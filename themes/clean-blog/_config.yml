@@ -10,10 +10,10 @@ menu:
     icon: gitlab
 
 # Title on top left of menu. Leave empty to use main blog title
-menu_title: Configurable Title
+menu_title: Blog PI 2
 
 # URL of the Home page image
-index_cover: http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg
+index_cover: https://ucecf7d3c59212132a814b106289.previews.dropboxusercontent.com/p/thumb/AAa2yGC2qwg66J14MPqD7NURj9EJLFKEDdtvfhSvQdf_tDPfI759Us76yLjydEtEoi4g23hoqw75qL9mMKo2yx9-D83J8sh9AFvfmEzBN1s1vtb_reuLNlAjisU5QaY7EaYILj9kbyXo4W1WTEb6oPyO3o2x0YeiecO9HDyTrpnA_OKUsQWTBBlSvSFMsgf3xExONULerfCjnNaeNMORQjqK1EMCY3_o-iradhqwtb3uHvRRYdLpN_Bwbe6MGetNPx2_WDd3ED71yz0LpAw1ySVwOj7oInAEYds-NYxU2EO3YPNoNMqSRciCdXvULPZsmC6gRM2iBIjT2n9u-ipidWaThuMDBJp4ROrXqUhEmebGp93Zmvi3YlMTDwhppi3myJU/p.jpeg?size_mode=5 
 
 # Default post title
 default_post_title: Untitled
