@@ -16,7 +16,18 @@
                   <div class="mt-auto d-flex flex-wrap p-0 align-items-center">
                     <img src="https://s2.glbimg.com/gsDAfkE5uDLlbz60DNBBExkbRaY=/1200x/smart/filters:cover():strip_icc()/s.glbimg.com/po/rc/media/2014/11/10/23_55_45_120_Pastel.png" style="width:50px; height:50px;" class="rounded-circle float-left img-thumbnail" alt="...">
                     <p class="h5 pl-2 pb-3 align-center" style="color:gray"> <%- (item.author) ? item.author : "Anônimo"  %> </p>
-                    <p class="meta h6 d-flex ml-auto mb-0"> <i class="fa fa-clock-o"></i>&nbspPostado em <%= item.date.format(config.date_format) %></p>
+                    <p class="meta h6 d-flex ml-auto mb-0"> <i class="fa fa-clock-o"></i>&nbsp
+                    <%
+                        const updated = item.updated.format(config.date_format);
+                        const date = item.date.format(config.date_format)
+                    %>
+                    <% if(date ==  updated) {%>
+                      Postado em <%= date %>
+                    <% }else{%>
+                      Atualizado em <%= updated %>
+                    <%}%>
+
+                    </p>
                   </div>
               </div>
             </div>

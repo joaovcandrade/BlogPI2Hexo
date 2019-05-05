@@ -1,19 +1,19 @@
-<div class="col-sm-12 col-md-4 w-100">
+<div class="col-sm-12 col-md-4 w-100 pt-2 pt-md-0">
     <div class="card flow-animation border-0">
 
         <a href="<%- config.root %><%- item.path %>" style="text-decoration: none">
 
-          <div class="card-body card-container shadow p-0">
+          <div class="shadow p-0">
 
-            <div class="d-flex flex-column card-body post-preview" style="height: 300px">
+            <div class="d-flex flex-column card-body post-preview " style="min-height: 250px">
 
-              <div class="pl-2 text-truncate">
+              <div class="pl-2">
                 <h5 class="card-title"><%- item.title || theme.default_post_title || "Sem título" %></h5>
-                <p class="card-text text-truncate" ><%- item.resume %></p>
+                <p class="card-text text-truncate"><%- item.resume %></p>
               </div>
 
                 <div class="mt-auto d-flex flex-wrap p-0 align-items-center">
-                  <div class= "d-flex flex-nowrap">
+                  <div class= "d-flex flex-nowrap col-12 p-0">
                     <img
                     <% if(item.author != 'a0' ){ %>
                       src="<%- gravatar(site.data.authors[item.author][1], 40) %>"

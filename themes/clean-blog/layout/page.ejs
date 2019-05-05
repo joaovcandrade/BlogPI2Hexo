@@ -38,6 +38,25 @@
     </div>
 <% } else { %>
     <section class="main">
+      <% var title = page.title;
+      %>
+
+      <% if(title == ("Apresentação pessoal")){ %>
+
+        <%- partial('apresentacao-pessoal', {item: page}) %>
+
+      <% }else if(title == ("Tech Stack")){ %>
+
+        <%- partial('tech-stack', {item: page}) %>
+
+      <% }else if(title == ("Projetos pessoais")){ %>
+
+        <%- partial('projetos-pessoais', {item: page}) %>
+
+      <% }else{ %>
+
         <%- partial('_partial/article-full', {item: page}) %>
+
+      <% }  %>
     </section>
 <% } %>

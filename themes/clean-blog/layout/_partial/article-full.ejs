@@ -3,7 +3,7 @@
 <%
     var cover = item.cover || theme.index_cover;
 %>
-<header class="intro-header" style="background-image: url('<%- cover %>')">
+<header class="intro-header mb-0" style="background-image: url('<%- cover %>')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
@@ -14,41 +14,33 @@
                         <%- item.subtitle %>
                     </h2>
                     <% } %>
-                    <span class="meta">
-                        <!-- Date and Author -->
-                        <% if(item.author) { %>
-                            Posted by <%- item.author %> on
-                        <% } %>
-                        <% if(item.date) { %>
-                            <%= item.date.format(config.date_format) %>
-                        <% } %>
-                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
+<!-- info -->
+<%
+  const updated = item.updated.format(config.date_format);
+  const date = item.date.format(config.date_format)
+%>
+<span class="meta d-flex d-flex align-items-center col-12 m-3 mb-2">
+  <img src="<%-gravatar(site.data.authors[item.author][1], 50)%>" alt="" class="rounded-circle float">
+      <div class="d-flex flex-column p-2">
+        Postado por <%- site.data.authors[item.author][0] %> em <%- date %>
+        <% if(date !==  updated){%>
+        <br>Atualizado em <%- updated %>, <%- moment(updated).locale('pt-BR').fromNow() %>
+        <%}%>
+      </div>
+</span>
+
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
 
-            <!-- Tags and categories -->
-           <% if (item.categories && item.categories.length || item.tags && item.tags.length) { %>
-                <div class="col-lg-4 offset-lg-2 col-md-5 offset-md-1 post-tags">
-                    <% if (item.tags && item.tags.length){ %>
-                        <%- partial('article-tags', {item: item}) %>
-                    <% } else { %>
-                        <%- partial('article-categories', {item: item}) %>
-                    <% } %>
-                </div>
-                <div class="col-lg-4 col-md-5 post-categories">
-                    <% if (item.tags && item.tags.length && item.categories && item.categories.length){ %>
-                        <%- partial('article-categories', {item: item}) %>
-                    <% } %>
-                </div>
-            <% } %>
+    <div class="container">
+          <div class="row">
+
 
             <!-- Gallery -->
             <% if (item.photos && item.photos.length){ %>
@@ -66,7 +58,49 @@
                     <!-- Go to www.addthis.com/dashboard to customize your tools -->
                     <div class="addthis_sharing_toolbox"></div>
                 <% } %>
+
+                <div class="row">
+                  <!-- Tags and categories -->
+                  <% if (item.categories && item.categories.length || item.tags && item.tags.length) { %>
+                      <div class="col-lg-4 offset-lg-2 col-md-5 offset-md-1 post-tags">
+                          <% if (item.tags && item.tags.length){ %>
+                            <span class="font-weight-bold">Tags:</span>
+                              <%- partial('article-tags', {item: item}) %>
+                          <% } else { %>
+                               <%- partial('article-categories', {item: item}) %>
+                          <% } %>
+                      </div>
+                      <div class="col-lg-4 col-md-5 post-categories">
+                          <% if (item.tags && item.tags.length && item.categories && item.categories.length){ %>
+                            <span class="font-weight-bold">Categorias: </span>
+                              <%- partial('article-categories', {item: item}) %>
+                          <% } %>
+                      </div>
+                  <% } %>
+                </div>
+
+
+
+                <!-- author -->
+                <hr>
+                <div class="d-inline-flex flex-row flex-nowrap p-2 align-items-center">
+                  <img src="<%-gravatar(site.data.authors[item.author][1])%>" alt="" class="rounded-circle float">
+                  <div class="d-flex flex-column align-items-baseline mx-2">
+                    <p class="text-muted h5 m-0 mt-3 font-weight-bold meta">Escrito por</p>
+                    <p class="m-0 text-muted"><%-site.data.authors[item.author][0]%></p>
+                    <footer class="blockquote-footer p-0">
+                    <small class="text-left font-italic">
+                        <%- site.data.authors[item.author][2] %>
+                    </small>
+                  </footer>
+                    <a href="mailto:<%- site.data.authors[item.author][1] %>"><i class="fa fa-envelope align-self-baseline meta" src="https://google.com.br" aria-hidden="true"> E-mail</i></a>
+                  </div>
+
+                </div>
+
             </div>
+
+
 
             <!-- Comments -->
             <% if (item.comment != false) { %>

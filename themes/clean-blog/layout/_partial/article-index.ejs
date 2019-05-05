@@ -17,7 +17,15 @@
             <% if(item.author) { %>
                 Postado por <%- site.data.authors[item.author][0] %> em
             <% } %>
-            <%= item.date.format(config.date_format) %>
+            <%
+                const updated = item.updated.format(config.date_format);
+                const date = item.date.format(config.date_format)
+            %>
+            <% if(date ==  updated) {%>
+              <%= date %>
+            <% }else{%>
+              <%= updated %>
+            <%}%>
         </p>
     </div>
     </a>
