@@ -1,7 +1,7 @@
 <!-- Page Header -->
 <!-- Set your background image for this header in your post front-matter: cover -->
 <%
-    var cover = item.cover || theme.index_cover;
+var cover = item.cover || theme.index_cover;
 %>
 <header class="intro-header" style="background-image: url('<%- cover %>')">
     <div class="container">
@@ -10,9 +10,9 @@
                 <div class="post-heading">
                     <h1><%- item.title || theme.default_post_title || "Untitled" %></h1>
                     <% if (item.subtitle && item.subtitle.length) { %>
-                    <h2 class="post-subheading">
-                        <%- item.subtitle %>
-                    </h2>
+                        <h2 class="post-subheading">
+                            <%- item.subtitle %>
+                        </h2>
                     <% } %>
                     <span class="meta">
                         <!-- Date and Author -->
@@ -35,7 +35,7 @@
         <div class="row">
 
             <!-- Tags and categories -->
-           <% if (item.categories && item.categories.length || item.tags && item.tags.length) { %>
+            <% if (item.categories && item.categories.length || item.tags && item.tags.length) { %>
                 <div class="col-lg-4 offset-lg-2 col-md-5 offset-md-1 post-tags">
                     <% if (item.tags && item.tags.length){ %>
                         <%- partial('article-tags', {item: item}) %>
@@ -56,24 +56,44 @@
             <% } %>
 
             <!-- Post Main Content -->
-            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                <%- item.content %>
 
-                <% if(theme.addthis) { %>
-                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=<%- theme.addthis %>"></script>
-
-                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                    <div class="addthis_sharing_toolbox"></div>
-                <% } %>
-            </div>
-
-            <!-- Comments -->
-            <% if (item.comment != false) { %>
-                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                    <%- partial("_partial/comments.ejs") %>
+            <div class="card-group">
+                <div class="card">
+                    <img src="https://scontent.fldb3-1.fna.fbcdn.net/v/t1.0-9/18403318_1303232169767255_6536225043156651045_n.jpg?_nc_cat=106&_nc_ht=scontent.fldb3-1.fna&oh=19dffcb91caa695f5d5a3f2ec5834e6b&oe=5D2E90B8" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%- site.data.authors.a1[0] %></h5>
+                        <p class="card-text"><%- site.data.authors.a1[2] %></p>
+                    </div>
                 </div>
-            <% } %>
-        </div>
-    </div>
+                <div class="card">
+                    <img src="https://scontent.fldb3-1.fna.fbcdn.net/v/t1.0-1/c1.0.652.652a/53250651_10216466458606821_328310980893212672_n.jpg?_nc_cat=105&_nc_ht=scontent.fldb3-1.fna&oh=7edbc412237be7c61d576ec55dac1724&oe=5D665A20" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%- site.data.authors.a2[0] %></h5>
+                        <p class="card-text"><%- site.data.authors.a2[2] %></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://scontent.fldb3-1.fna.fbcdn.net/v/t1.0-9/18700325_10210474843804907_556041276927115997_n.jpg?_nc_cat=102&_nc_ht=scontent.fldb3-1.fna&oh=a5d07dee58293b990d00c8b125bea313&oe=5D6A981B" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%- site.data.authors.a3[0] %></h5>
+                        <p class="card-text"><%- site.data.authors.a3[2] %></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://scontent.fldb3-1.fna.fbcdn.net/v/t1.0-9/57109754_1959257764186368_3824384810462216192_n.jpg?_nc_cat=104&_nc_ht=scontent.fldb3-1.fna&oh=0946c7162e2de8c8c00dda31914ec5c7&oe=5D736188" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%- site.data.authors.a4[0] %></h5>
+                        <p class="card-text"><%- site.data.authors.a4[2] %></p>
+                    </div>
+                    <div/
+
+
+                    <!-- Comments -->
+                    <% if (item.comment != false) { %>
+                        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                            <%- partial("_partial/comments.ejs") %>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
 </article>
