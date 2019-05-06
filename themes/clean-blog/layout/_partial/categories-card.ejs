@@ -6,7 +6,7 @@
   <div class="card-body p-0">
     <div class="d-inline-flex flex-wrap">
       <% site.categories.forEach(categ => {%>
-        <a class=" badge btn-outline-secondary text-uppercase font-italic card-fast flow-animation m-1" href = <%- url_for(categ.path) %>  style="border: 1px solid;">
+        <a class="badge badge-secondary text-uppercase font-italic card-fast flow-animation m-1" href = <%-config.root + categ.path%> style="white-space: normal;">
           <%- categ.name %>
         </a>
         <br>

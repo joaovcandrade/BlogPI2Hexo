@@ -1,12 +1,13 @@
+
 <div class="row p-3">
   <div class="card w-100 shadow flow-animation">
     <div class="card-header pt-4 text-center">
     <h1 class="h5 font-weight-bold">Tags</h1>
   </div>
   <div class="card-body p-0">
-    <div class="d-flex flex-wrap justify-content-around">
+    <div class="d-inline-flex flex-wrap">
       <% site.tags.forEach(tag => {%>
-          <a class="badge btn-outline-secondary text-uppercase font-italic card-fast flow-animation m-1" href = <%- url_for(tag.path) %> style="border: 1px solid;">
+          <a class="badge badge-secondary text-uppercase font-italic card-fast flow-animation m-1" href = <%-config.root + tag.path%> style="white-space: normal;">
           #<%- tag.name %>
         </a>
         <br>
