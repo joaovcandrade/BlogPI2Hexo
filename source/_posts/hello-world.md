@@ -1,43 +1,43 @@
 ---
-title: Hello World
-resume: "Um resumo"
+title: Hello World com Hexo
+resume: "Criando uma nova postagem com o Hexo"
 tags: tag1 tag2
-updated: 04-05-2019 22:00:00
+updated:
 categories: cat1 cat2
 author: a3
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
-
 ## Quick Start
 
-### Create a new post
+### Criando uma nova postagem
 
 ``` bash
-$ hexo new "My New Post"
+$ hexo new "Hello World"
 ```
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+Mais informações: [Escrevendo](https://hexo.io/pt-br/docs/writing.html)
 
-### Run server
+### Rodando o servidor
 
 ``` bash
 $ hexo server
 ```
 
-More info: [Server](https://hexo.io/docs/server.html)
+Mais informações: [Server](https://hexo.io/pt-br/docs/server.html)
 
-### Generate static files
+### Gerando as páginas estáticas
 
 ``` bash
 $ hexo generate
 ```
 
-More info: [Generating](https://hexo.io/docs/generating.html)
+Mais informações: [Gerando](https://hexo.io/pt-br/docs/generating.html)
 
-### Deploy to remote sites
+### Deploy
 
 ``` bash
 $ hexo deploy
 ```
 
-More info: [Deployment](https://hexo.io/docs/deployment.html)
+Mais informações: [Deploy](https://hexo.io/pt-br/docs/deployment.html)
+
+*Esta postagem padrão e foi apenas traduzida do inglês*
