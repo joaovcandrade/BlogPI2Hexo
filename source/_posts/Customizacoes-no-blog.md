@@ -1,6 +1,6 @@
 ---
 title: Customizações no blog
-resume: Breve resumo
+resume: Quando começamos a customização do blog, primeiro produzimos um esboço de como ficaria nosso blog, para que tivéssemo uma idéia clara do que iríamos modificar.
 author: a2
 date: 2019-05-05 16:33:19
 subtitle:
