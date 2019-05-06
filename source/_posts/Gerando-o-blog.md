@@ -3,7 +3,7 @@ title: Gerando o blog com Hexo
 date: 30-04-2019 09:12:12
 updated:
 resume: "O Hexo é um framework de blogs em Nodejs, conhecido por ser rápido na geração de conteúdo"
-author: a2
+author: a1
 
 categories:
 - [Construindo o blog, Primeiros passos]
