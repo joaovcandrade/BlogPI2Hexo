@@ -1,0 +1,10 @@
+<div class="uk-card uk-card-default uk-card-small col-12 col-md-3 m-auto
+p-0 c-card " uk-scrollspy-class="uk-animation-slide-<%-(index % 2 == 0)? 'top' : 'bottom' %>">
+  <div class="uk-card-media-top">
+    <img src="<%- site.data.authors[`a${index}`][3]%>" class="img-fluid rounded" alt="...">
+  </div>
+    <div class="uk-card-body">
+        <h5 class="uk-card-title title-ap"><%- site.data.authors[`a${index}`][0]%></h5>
+        <p class="uk-card-text"><%- site.data.authors[`a${index}`][2]%></p>
+    </div>
+</div>

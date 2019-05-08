@@ -1,8 +1,8 @@
-<div class="card flow-animation my-3 border-0">
+<div class="uk-card uk-card-default uk-card-small uk-card-hover my-3 border-0">
   <a href="<%- config.root %><%- item.path %>" style="text-decoration: none">
-    <div class="card-body shadow">
+    <div class="uk-card-body">
       <div class="post-preview text-truncate">
-            <h2 class="post-title m-0">
+            <h2 class="uk-card-title m-0">
                 <%- item.title || theme.default_post_title || "Sem título" %>
             </h2>
             <% if (item.subtitle && item.subtitle.length) { %>
@@ -10,21 +10,21 @@
                     <%- item.subtitle %>
                 </h3>
             <% } %>
-            <p class="text-truncate"><%- item.resume %></p>
-        <p class="post-meta m-0 text-truncate">
+            <p class="uk-card-text uk-text-small uk-text-muted text-truncate"><%- item.resume %></p>
+        <p class="h6 meta uk-card-text uk-text-muted text-truncate">
             <!-- Date and Author -->
-            <i class="fa fa-clock-o"></i>&nbsp
+            <i uk-icon="icon: clock; ratio: 0.7"></i>&nbsp
             <% if(item.author) { %>
-                Postado por <%- site.data.authors[item.author][0] %> em
+                Postado por <b> <%- site.data.authors[item.author][0] %> </b> em <b>
             <% } %>
             <%
                 const updated = item.updated.format(config.date_format);
                 const date = item.date.format(config.date_format)
             %>
             <% if(date ==  updated) {%>
-              <%= date %>
+              <%= date %> </b>
             <% }else{%>
-              <%= updated %>
+              <%= updated %> </b>
             <%}%>
         </p>
     </div>

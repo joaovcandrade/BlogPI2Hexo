@@ -1,14 +1,14 @@
-<div class="post-preview">
-    <a href="<%- config.root %><%- item.path %>">
-        <h1 class="post-title archive">
+<div class="uk-card uk-card-small uk-card-default uk-card-hover uk-card-body m-2 post-preview" uk-scrollspy-class="uk-animation-slide-<%-(index % 2 == 0)? 'left' : 'right'%>">
+    <a href="<%- config.root %><%- item.path %>" class="stretched-link">
+        <h1 class="post-title archive mt-0">
             <%- item.title || theme.default_post_title || "Untitled" %>
         </h1>
     </a>
-    <p class="post-meta archive">
+    <p class="post-meta archive meta">
         <!-- Date and Author -->
         <% if(item.author) { %>
-            Postado por <%- site.data.authors[item.author][0] %> em
+            Postado por <b> <%- site.data.authors[item.author][0] %> </b> em <b>
         <% } %>
-        <%= item.date.format(config.date_format) %>
+        <%= item.date.format(config.date_format) %> </b>
     </p>
 </div>
