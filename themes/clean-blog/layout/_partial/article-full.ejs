@@ -2,15 +2,28 @@
 <!-- Set your background image for this header in your post front-matter: cover -->
 <%
     var cover = item.cover || theme.index_cover;
+    const updated = item.updated.format(config.date_format);
+    const date = item.date.format(config.date_format)
 %>
-<header class="intro-header mb-0" style="background-image: url('<%- cover %>')">
+<header class="intro-header" style="background-image: url('<%- cover %>')">
+    <div class="uk-overlay uk-overlay-default uk-position-bottom p-0">
+      <span class="meta d-flex d-flex align-items-center col-12 m-3 mb-2">
+        <img src="<%-gravatar(site.data.authors[item.author][1], 50)%>" alt="" class="uk-border-circle uk-active">
+            <div class="d-flex flex-column p-2">
+              Postado por <%- site.data.authors[item.author][0] %> em <%- date %>
+              <% if(date !==  updated){%>
+              <br>Atualizado em <%- updated %>, <%- moment(updated).locale('pt-BR').fromNow() %>
+              <%}%>
+            </div>
+      </span>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
                 <div class="post-heading">
-                    <h1><%- item.title || theme.default_post_title || "Untitled" %></h1>
+                    <h1 class="text-white"><%- item.title || theme.default_post_title || "Untitled" %></h1>
                     <% if (item.subtitle && item.subtitle.length) { %>
-                    <h2 class="post-subheading">
+                    <h2 class="post-subheading text-white">
                         <%- item.subtitle %>
                     </h2>
                     <% } %>
@@ -21,19 +34,8 @@
 </header>
 
 <!-- info -->
-<%
-  const updated = item.updated.format(config.date_format);
-  const date = item.date.format(config.date_format)
-%>
-<span class="meta d-flex d-flex align-items-center col-12 m-3 mb-2">
-  <img src="<%-gravatar(site.data.authors[item.author][1], 50)%>" alt="" class="rounded-circle float">
-      <div class="d-flex flex-column p-2">
-        Postado por <%- site.data.authors[item.author][0] %> em <%- date %>
-        <% if(date !==  updated){%>
-        <br>Atualizado em <%- updated %>, <%- moment(updated).locale('pt-BR').fromNow() %>
-        <%}%>
-      </div>
-</span>
+
+
 
 <!-- Post Content -->
 <article>
@@ -83,20 +85,27 @@
 
                 <!-- author -->
                 <hr>
-                <div class="d-inline-flex flex-row flex-nowrap p-2 align-items-center">
-                  <img src="<%-gravatar(site.data.authors[item.author][1])%>" alt="" class="rounded-circle float">
-                  <div class="d-flex flex-column align-items-baseline mx-2">
-                    <p class="text-muted h5 m-0 mt-3 font-weight-bold meta">Escrito por</p>
-                    <p class="m-0 text-muted"><%-site.data.authors[item.author][0]%></p>
+                <article class="uk-card-default uk-card-body">
+                  <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
+                      <div class="uk-width-auto">
+                          <img class="uk-comment-avatar rounded-circle float" src="<%-gravatar(site.data.authors[item.author][1])%>" width="80" height="80" alt="">
+                      </div>
+                      <div class="uk-width-expand">
+                          <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#"><%-site.data.authors[item.author][0]%></a></h4>
+                          <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                              <li><a class="uk-link-reset cl-ct" href="#"><%- updated %></a></li>
+                              <li><a class="uk-link-reset cl-ct" href="mailto:<%- site.data.authors[item.author][1] %>"><i uk-icon="icon: mail" aria-hidden="true"></i> E-mail</a></li>
+                          </ul>
+                      </div>
+                  </header>
+                  <div class="uk-comment-body">
                     <footer class="blockquote-footer p-0">
                     <small class="text-left font-italic">
                         <%- site.data.authors[item.author][2] %>
                     </small>
                   </footer>
-                    <a href="mailto:<%- site.data.authors[item.author][1] %>"><i class="fa fa-envelope align-self-baseline meta" src="https://google.com.br" aria-hidden="true"> E-mail</i></a>
                   </div>
-
-                </div>
+              </article>
 
             </div>
 

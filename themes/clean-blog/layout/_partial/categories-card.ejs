@@ -1,17 +1,19 @@
 <div class="row p-3">
-  <div class="card w-100 shadow flow-animation">
-    <div class="card-header pt-4 text-center">
-      <h1 class="h5 font-weight-bold">Categorias</h1>
-  </div>
-  <div class="card-body p-0">
-    <div class="d-inline-flex flex-wrap">
-      <% site.categories.forEach(categ => {%>
-        <a class="badge badge-secondary text-uppercase font-italic card-fast flow-animation m-1" href = <%-config.root + categ.path%> style="white-space: normal;">
-          <%- categ.name %>
-        </a>
-        <br>
-    <%})%>
-    </div>
-  </div>
+  <div class="uk-card uk-card-small uk-card-default">
+      <div class="uk-card-header">
+          <div class="uk-grid-small uk-flex-middle" uk-grid>
+              <div class="uk-width-expand">
+                  <h3 class="uk-card-title uk-margin-remove-bottom uk-text-center">Categorias</h3>
+              </div>
+          </div>
+      </div>
+      <div class="uk-card-body">
+        <div class="d-inline-flex flex-wrap justify-content-around">
+          <% site.categories.forEach(categ => {%>
+          <a class="badge badge-secondary text-uppercase font-italic card-fast flow-animation m-1" href = <%-config.root + categ.path%> style="white-space: normal;">
+          #<%- categ.name %></a>
+        <%})%>
+        </div>
+      </div>
   </div>
 </div>

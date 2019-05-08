@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
                 <div class="site-heading">
-                    <h1><%- title %></h1>
+                    <h1 class="text-white"><%- title %></h1>
                 </div>
             </div>
         </div>
@@ -25,9 +25,9 @@
 <!-- Main Content -->
 <div class="container">
     <div class="row">
-        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-            <% page.posts.each(function(item){ %>
-                <%- partial('_partial/article-archive', {item: item}) %>
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1" uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 100">
+            <% page.posts.each(function(item, index){ %>
+                <%- partial('_partial/article-archive', {item: item, index: index}) %>
             <% }); %>
             <div class="archive-before-pagination"></div>
             <%- partial('_partial/pagination') %>
