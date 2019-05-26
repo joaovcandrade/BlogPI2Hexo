@@ -1,17 +1,17 @@
 ---
-title: Hello World com Hexo
+title: Primeiro Postagem do Grupo.
 resume: "Criando uma nova postagem com o Hexo"
 tags: tag1 tag2
 updated:
 categories: cat1 cat2
 author: a3
 ---
-## Quick Start
+## Inicio Rapido.
 
 ### Criando uma nova postagem
 
 ``` bash
-$ hexo new "Hello World"
+$ hexo new "Olá Muito!!"
 ```
 
 Mais informações: [Escrevendo](https://hexo.io/pt-br/docs/writing.html)
@@ -37,6 +37,9 @@ Mais informações: [Gerando](https://hexo.io/pt-br/docs/generating.html)
 ``` bash
 $ hexo deploy
 ```
+
+### O Site do Hexo nos ajudou muito para bastante nessa parte, dando as informações
+### sequenciais e claras, facilitando nosso desenvolvimento no trabalho.
 
 Mais informações: [Deploy](https://hexo.io/pt-br/docs/deployment.html)
 
