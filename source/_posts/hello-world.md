@@ -38,7 +38,7 @@ Mais informações: [Gerando](https://hexo.io/pt-br/docs/generating.html)
 $ hexo deploy
 ```
 
-### O Site do Hexo nos ajudou muito para bastante nessa parte, dando as informações sequenciais e claras, facilitando nosso desenvolvimento no trabalho.
+### O Site do Hexo nos ajudou muito bastante nessa parte, dando as informações sequenciais e claras, facilitando nosso desenvolvimento no trabalho.
 
 Mais informações: [Deploy](https://hexo.io/pt-br/docs/deployment.html)
 
