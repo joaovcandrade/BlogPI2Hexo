@@ -11,7 +11,7 @@ author: a3
 ### Criando uma nova postagem
 
 ``` bash
-$ hexo new "Olá Muito!!"
+$ hexo new "Olá Mundo!!"
 ```
 
 Mais informações: [Escrevendo](https://hexo.io/pt-br/docs/writing.html)
