@@ -8,8 +8,6 @@ cache:
 deploy:
   stage: deploy
   image: rastasheep/ubuntu-sshd
-  script:
-    - ssh deploy@$DEPLOY_SERVER "source ~/.nvm/nvm.sh; cd blog-pi-2; git pull; npm i; hexo generate"
   before_script:
     - mkdir -p ~/.ssh
     - echo "$DEPLOY_KEY" | tr -d '\r' > ~/.ssh/id_rsa
@@ -17,3 +15,5 @@ deploy:
     - eval "$(ssh-agent -s)"
     - ssh-add ~/.ssh/id_rsa
     - ssh-keyscan -H $DEPLOY_SERVER >> ~/.ssh/known_hosts
+  script:
+    - ssh deploy@$DEPLOY_SERVER "source ~/.nvm/nvm.sh; cd blog-pi-2; git pull; npm i; hexo generate"
