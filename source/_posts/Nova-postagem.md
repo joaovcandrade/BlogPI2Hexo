@@ -7,7 +7,7 @@ updated:
 tags: tag1 tag2
 ---
 
-###Criando uma conta no Amazon
+#Criando uma conta no Amazon
 
 ``` bash
 Nosso integrante Rafael Sequiguti criou uma conta no site Amazon Linghtsail.
