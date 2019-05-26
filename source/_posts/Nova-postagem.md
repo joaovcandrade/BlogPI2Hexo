@@ -1,7 +1,7 @@
 ---
 title: Servidor Amazon AWS
 resume: Aqui, mostramos um pouco de como subimos o nosso servido no Amazon.
-author: a0
+author: a3
 subtitle: Subindo um Servidor Amazon.
 updated:
 tags: tag1 tag2
