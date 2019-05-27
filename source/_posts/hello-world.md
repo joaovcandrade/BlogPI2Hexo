@@ -2,16 +2,17 @@
 title: Olá Mundo com Hexo
 resume: "Criando uma nova postagem com o Hexo"
 tags: tag1 tag2
-updated:
+date: 2019-05-01 23:18:41
+updated: 2019-05-06 23:18:41
 categories: cat1 cat2
-author: a3
+author: a4
 ---
 ## Inicio Rapido.
 
 ### Criando uma nova postagem
 
 ``` bash
-$ hexo new "Olá Mundo!!"
+$ hexo new "Olá Mundo!"
 ```
 
 Mais informações: [Escrevendo](https://hexo.io/pt-br/docs/writing.html)
@@ -38,7 +39,7 @@ Mais informações: [Gerando](https://hexo.io/pt-br/docs/generating.html)
 $ hexo deploy
 ```
 
-### A documentação do Hexo  ajuda bastante nesses passos, dando as informações sequenciais e claras, facilitando nosso desenvolvimento do blog.
+### A documentação do Hexo é bem intuitiva e simplificada, dando as informações sequenciais e claras, facilitando o desenvolvimento de um blog.
 
 Mais informações: [Deploy](https://hexo.io/pt-br/docs/deployment.html)
 

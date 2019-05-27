@@ -1,9 +1,10 @@
 (function($) {
 
   if($(".updated")[0]){
-    el = $(".updated");
-    m = el.attr("value");
-    el.html("Atualizado " + moment(m).locale('pt-BR').fromNow());
-  }
+    $(".updated").each((i, el)=>{
+      m = el.getAttribute("value");
+      el.innerHTML = ("Atualizado " + moment(m).locale('pt-BR').fromNow());
+    });
 
+  }
 })(jQuery);

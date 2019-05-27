@@ -10,23 +10,34 @@
                     <%- item.subtitle %>
                 </h3>
             <% } %>
+
             <p class="uk-card-text uk-text-small uk-text-muted text-truncate"><%- item.resume %></p>
-        <p class="h6 meta uk-card-text uk-text-muted text-truncate">
-            <!-- Date and Author -->
-            <i uk-icon="icon: clock; ratio: 0.7"></i>&nbsp
-            <% if(item.author) { %>
-                Postado por <b> <%- site.data.authors[item.author][0] %> </b> em <b>
-            <% } %>
-            <%
-                const updated = item.updated.format(config.date_format);
-                const date = item.date.format(config.date_format)
-            %>
-            <% if(date ==  updated) {%>
-              <%= date %><%= updated %> </b>
-            <% }else{%>
-              <%= updated %> </b>
-            <%}%>
-        </p>
+            <div class="d-flex align-items-center">
+              <img
+              <% if(item.author != 'a0' ){ %>
+                src="<%- gravatar(site.data.authors[item.author][1], 40) %>"
+              <% }else{ %>
+                src="<%- site.data.authors.a0[1] %>"
+              <%}%>
+              width="40" height="40" class="uk-border-circle" alt="...">
+              <i class="meta pl-2" uk-icon="icon: clock; ratio: 1"></i>&nbsp
+              <p class="h6 meta uk-card-text uk-text-muted text-wrap pt-2">
+                    <!-- Date and Author -->
+                    <span>
+                      <% if(item.author) { %>
+                        Postado por <b> <%- site.data.authors[item.author][0] %> </span> </b> em <b>
+                    <% } %>
+                    <%
+                        const updated = item.updated.format(config.date_format);
+                        const date = item.date.format(config.date_format)
+                    %>
+                    <% if(date ==  updated) {%>
+                      <%= date %> </b>
+                    <% }else{%>
+                      <%= date %><br><span class="updated" value="<%= item.updated %>"></span></b>
+                    <%}%>
+              </p>
+            </div>
     </div>
     </a>
   </div>

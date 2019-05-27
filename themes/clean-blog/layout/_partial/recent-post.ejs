@@ -1,3 +1,7 @@
+<%
+    const updated = item.updated.format(config.date_format);
+    const date = item.date.format(config.date_format)
+%>
 <div class="col-sm-12 col-md-4 w-100 pt-2 pt-md-0">
     <div class="uk-card uk-card-default uk-card-hover ">
       <div class="uk-card-body">
@@ -18,7 +22,12 @@
             </div>
             <div class="uk-width-expand">
                 <h3 class="uk-card-title uk-margin-remove-bottom uk-text-small"><%- site.data.authors[item.author][0] %></h3>
-                <p class="uk-text-meta uk-margin-remove-top"><i uk-icon="icon: clock; ratio: 0.7" ></i>&nbspPostado em <%= item.date.format(config.date_format) %></p>
+                <p class="uk-text-meta uk-margin-remove-top"><i uk-icon="icon: clock; ratio: 0.7" ></i>&nbsp<% if(date ==  updated) {%>
+                <%= date %>
+                <% }else{%>
+                  <%= date %><br><span class="updated" value="<%= item.updated %>"></span>
+                <%}%>
+              </p>
             </div>
         </div>
       </div>

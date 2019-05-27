@@ -2,7 +2,7 @@
 title: Criando o servidor do blog
 resume: "Para a escolha do servidor, analisamos 5 opções: Amazon AWS, Microsoft Azure, Google Cloud, Digital Ocean e Vultr"
 author: a3
-date: 2019-05-26 21:07:58
+date: 2019-05-26 23:18:41
 subtitle:
 updated:
 tags:
