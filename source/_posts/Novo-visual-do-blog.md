@@ -8,7 +8,7 @@ updated: 2019-05-20 23:18:41
 tags:
 ---
 
-***Se você ainda não viu a parte 1 [clique aqui](/2019/05/05/Customizacoes-no-blog/)***
+***Se você ainda não viu a parte 1 [clique aqui](/post/2019/05/05/Customizacoes-no-blog/)***
 
 O blog foi customizado com base no **bootstrap**, mas agora na nova versão, utiliza nova fonte e também o ***[Uikit](https://getuikit.com/)***, a fim de melhorar o design do blog e facilitar na construção de elementos das páginas e implementação de animações.
 
