@@ -2,7 +2,7 @@
 <!-- Set your background image for this header in your post front-matter: cover -->
 <%
     var cover = item.cover || theme.index_cover;
-    const updated = item.updated.format(config.date_format);
+    const updated = page.updated.format(config.date_format);
     const date = item.date.format(config.date_format)
 %>
 <header class="intro-header" style="background-image: url('<%- cover %>')">
@@ -12,7 +12,8 @@
             <div class="d-flex flex-column p-2">
               Postado por <%- site.data.authors[item.author][0] %> em <%- date %>
               <% if(date !==  updated){%>
-              <br>Atualizado em <%- updated %>, <%- moment(updated).locale('pt-BR').fromNow() %>
+              <br>
+              <b><span class="updated" value="<%-new Date(page.updated) %>"></span></b>
               <%}%>
             </div>
       </span>

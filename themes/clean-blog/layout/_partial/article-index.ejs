@@ -22,7 +22,7 @@
                 const date = item.date.format(config.date_format)
             %>
             <% if(date ==  updated) {%>
-              <%= date %> </b>
+              <%= date %><%= updated %> </b>
             <% }else{%>
               <%= updated %> </b>
             <%}%>

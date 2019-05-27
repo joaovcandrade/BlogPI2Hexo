@@ -1,5 +1,5 @@
 ---
-title: Primeiro Postagem do Grupo.
+title: Olá Mundo com Hexo
 resume: "Criando uma nova postagem com o Hexo"
 tags: tag1 tag2
 updated:
@@ -38,8 +38,8 @@ Mais informações: [Gerando](https://hexo.io/pt-br/docs/generating.html)
 $ hexo deploy
 ```
 
-### O Site do Hexo nos ajudou bastante nessa parte, dando as informações sequenciais e claras, facilitando nosso desenvolvimento no trabalho.
+### A documentação do Hexo  ajuda bastante nesses passos, dando as informações sequenciais e claras, facilitando nosso desenvolvimento do blog.
 
 Mais informações: [Deploy](https://hexo.io/pt-br/docs/deployment.html)
 
-*Esta postagem padrão e foi apenas traduzida do inglês*
+*Esta postagem foi adaptada e traduzida da postagem padrão do hexo*
