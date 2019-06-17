@@ -1,6 +1,6 @@
 ---
 title: Snake Game
-resume: Breve resumo
+resume: Este jogo foi produzindo como trabalho da disciplina Técnicas de programação II. Utilizando o Scratch.
 visible: false
 author: a1
 date: 2019-01-16 23:54:39

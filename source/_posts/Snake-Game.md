@@ -1,6 +1,6 @@
 ---
 title: Snake Game
-resume: Snake game realizado em java
+resume: O jogo foi desenvolvido em java, utilizando o Greenfoot. O trabalho foi realizado em grupo
 visible: false
 author: a2
 categories: "Projetos Juan"

@@ -1,6 +1,6 @@
 ---
 title: Desenhista
-resume: Breve resumo
+resume: Este programa foi produzindo como trabalho da disciplina Laboratório de Computação II. Utilizando o java 2D
 visible: false
 author: a1
 date: 2019-01-16 23:36:34
@@ -12,7 +12,7 @@ tags:
 
 ## Desenhista
 
-Este jogo foi produzindo como trabalho da disciplina Laboratório de Computação II. Utilizando o java 2D
+Este programa foi produzindo como trabalho da disciplina Laboratório de Computação II. Utilizando o java 2D
 
 O objetivo do projeto é produzir desenhos na tela usando o java.
 

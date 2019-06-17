@@ -1,6 +1,6 @@
 ---
 title: Pong Game
-resume: Breve resumo
+resume: Este jogo foi produzindo como trabalho da disciplina Laboratório de Computação I. Utilizando o Scratch.
 visible: false
 author: a1
 date: 2019-01-16 22:43:41

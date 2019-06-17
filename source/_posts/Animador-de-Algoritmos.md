@@ -1,6 +1,6 @@
 ---
 title: Animador de Algoritmos
-resume: Breve resumo
+resume: Este programa foi produzindo como trabalho da disciplina Laboratório de Computação II. Utilizando métodos de ordenação se busca em Java.
 visible: false
 author: a1
 date: 2019-01-16 23:41:07
@@ -10,7 +10,7 @@ updated:
 tags:
 ---
 
-Este jogo foi produzindo como trabalho da disciplina Laboratório de Computação II. Utilizando métodos de ordenação se busca em Java.
+Este programa foi produzindo como trabalho da disciplina Laboratório de Computação II. Utilizando métodos de ordenação se busca em Java.
 
 O objetivo do projeto é animação passo-a-passo de algoritmos de busca e ordenação.
 
