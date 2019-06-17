@@ -6,6 +6,8 @@ date: 2019-05-01 23:18:41
 updated: 2019-05-06 23:18:41
 categories: cat1 cat2
 author: a4
+visible: true
+
 ---
 ## Inicio Rapido.
 

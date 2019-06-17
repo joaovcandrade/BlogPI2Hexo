@@ -1,0 +1,19 @@
+<div class="uk-card uk-card-default uk-card-body uk-card-hover m-2">
+  <a class="stretched-link" href="<%- config.root %>../categories/Projetos-<%-(site.data.authors[`a${index}`][0].split(' ')[0]).normalize('NFD').replace(/[\u0300-\u036f]/g, ""); %>" style="text-decoration: none">
+  <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
+      <div class="uk-width-auto">
+          <img class="uk-comment-avatar rounded-circle float" src="<%- site.data.authors[`a${index}`][3]%>" width="80" height="80" alt="">
+      </div>
+      <div class="uk-card-media-top">
+          <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#"></a><%- site.data.authors[`a${index}`][0]%></h4>
+
+      </div>
+  </header>
+  <div class="uk-comment-body">
+    <footer class="blockquote-footer p-0">
+    <h5 class="text-left font-italic">
+      ver projetos
+    </h5>
+  </footer>
+  </div>
+</div>

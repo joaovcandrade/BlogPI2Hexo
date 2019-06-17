@@ -21,7 +21,7 @@ default_post_title: Untitled
 # Comments. Choose one by filling up the information
 comments:
   # Disqus comments
-  disqus_shortname:
+  disqus_shortname: pi2-1
   # Facebook comments
   facebook:
     appid:

@@ -6,6 +6,8 @@ date: 2019-05-08 23:18:41
 subtitle:
 updated: 2019-05-20 23:18:41
 tags:
+visible: true
+
 ---
 
 ***Se você ainda não viu a parte 1 [clique aqui](/post/2019/05/05/Customizacoes-no-blog/)***

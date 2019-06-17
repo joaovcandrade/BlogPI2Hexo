@@ -4,6 +4,8 @@ date: 2019-05-06 23:18:41
 updated: 2019-05-10 23:18:41
 resume: "O Hexo é um framework de blogs em Nodejs, conhecido por ser rápido na geração de conteúdo"
 author: a1
+visible: true
+
 
 categories:
 - [Construindo o blog, Primeiros passos]

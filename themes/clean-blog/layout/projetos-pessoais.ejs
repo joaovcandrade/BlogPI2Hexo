@@ -1,7 +1,7 @@
 <!-- Page Header -->
 <!-- Set your background image for this header in your post front-matter: cover -->
 <%
-    var cover = item.cover || theme.index_cover;
+var cover = item.cover || theme.index_cover;
 %>
 <header class="intro-header" style="background-image: url('<%- cover %>')">
     <div class="container">
@@ -10,9 +10,9 @@
                 <div class="post-heading">
                     <h1 class="text-white"><%- item.title || theme.default_post_title || "Untitled" %></h1>
                     <% if (item.subtitle && item.subtitle.length) { %>
-                    <h2 class="post-subheading text-white">
-                        <%- item.subtitle %>
-                    </h2>
+                        <h2 class="post-subheading text-white">
+                            <%- item.subtitle %>
+                        </h2>
                     <% } %>
                 </div>
             </div>
@@ -26,7 +26,7 @@
         <div class="row">
 
             <!-- Tags and categories -->
-           <% if (item.categories && item.categories.length || item.tags && item.tags.length) { %>
+            <% if (item.categories && item.categories.length || item.tags && item.tags.length) { %>
                 <div class="col-lg-4 offset-lg-2 col-md-5 offset-md-1 post-tags">
                     <% if (item.tags && item.tags.length){ %>
                         <%- partial('article-tags', {item: item}) %>
@@ -47,24 +47,23 @@
             <% } %>
 
             <!-- Post Main Content -->
-            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                <%- item.content %>
+            <div class="uk-grid-medium uk-child-width-expand@s"  uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 180" uk-grid>
 
-                <% if(theme.addthis) { %>
-                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=<%- theme.addthis %>"></script>
+                    <% for(var i = 0; i < Object.keys(site.data.authors).length; i++){ %>
+                      <% if( i > 0){ %>
+                        <%- partial('_partial/card-projetosPessoais', {index: i}) %>
+                    <%  } %>
 
-                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                    <div class="addthis_sharing_toolbox"></div>
-                <% } %>
-            </div>
+                    <% }; %>
 
-            <!-- Comments -->
-            <% if (item.comment != false) { %>
-                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                    <%- partial("_partial/comments.ejs") %>
+             </div>
+
+                    <!-- Comments -->
+                    <% if (item.comment != false) { %>
+                        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                            <%- partial("_partial/comments.ejs") %>
+                        </div>
+                    <% } %>
                 </div>
-            <% } %>
-        </div>
-    </div>
+            </div>
 </article>
