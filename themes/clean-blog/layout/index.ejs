@@ -25,11 +25,8 @@
     <div class="card-deck w-100" uk-grid uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 200;">
 
       <% contador = 0 %>
-      <% page.posts.each(function(item, index) { %>
-         <%if(item.visible && contador != 3){%>
+      <% page.posts.limit(3).each(function(item, index) { %>
             <%- partial('_partial/recent-post', {item: item, index: index}) %>
-            <% contador++ %>
-          <%}else return false%>
       <% }); %>
 
 

@@ -4,7 +4,7 @@ resume: Snake game realizado em java
 visible: false
 author: a2
 categories: "Projetos Juan"
-date: 2019-06-16 22:31:05
+date: 2019-01-16 22:31:05
 subtitle:
 updated:
 tags:
