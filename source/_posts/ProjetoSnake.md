@@ -4,7 +4,7 @@ title: Jogo da cobrinha
 resume: O jogo foi desenvolvido em java, O trabalho foi realizado em grupo, eu, Fernando e o Wilikins
 visible: false
 author: a3
-categories: "Projetos Thierris"
+categories: "Projetos Jose"
 date: 2019-01-16 22:31:05
 subtitle:
 updated:
@@ -16,4 +16,4 @@ O jogo foi desenvolvido em java, O trabalho foi realizado em grupo, eu, Fernando
 
 O jogo e baseado nos jogos desenvolvidos para celular na década de 90, muito famoso nos celulares da Nokia.
 
-[{% http://trab.dc.unifil.br/gitlab/willikinsabreu/snakegame.git)
+[Link gitlab]http://trab.dc.unifil.br/gitlab/willikinsabreu/snakegame.git)
