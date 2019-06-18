@@ -1,12 +1,13 @@
-<div class="uk-card">
-            <img class="uk-card-media-top" src="<%- item[1] %>" width="350" height="550"  class="rounded" alt="...">
-           
+<div class="uk-card uk-card-hover col-12 col-sm-4 text-center ">
+  <a class="uk-link-toggle " href="<%- item[2] %>">
+   <div class="uk-card-media-top m-1">
+            <img src="<%- item[1] %>" style="cursor: pointer;" width="250" height="450"  class="rounded" alt="...">
+      </div>
           <div class="uk-card-body ">
-            <div class="uk-card-title">
-                <a href="<%- item[2] %>" class="stretched-link"> <%- item[0] %></a>
+            <div class="uk-card-title uk-text-center p-0">
+                <span> <%- item[0] %></span>
 
             </div>
           </div>
+          </a>
 </div>
-    
-
