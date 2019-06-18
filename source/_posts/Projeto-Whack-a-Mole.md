@@ -4,7 +4,7 @@ resume: Jogo desenvolvido no Scratch em uma prova aplicada na matéria de Técni
 visible: false
 author: a4
 categories: "Projetos Rafael"
-date: 2019-06-17 19:56:51
+date: 2019-01-17 19:56:51
 subtitle:
 updated:
 tags:
