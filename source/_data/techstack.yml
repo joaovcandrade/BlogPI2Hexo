@@ -1,0 +1,30 @@
+0:
+  - "Hexo"
+  - "/img/techstack/hexo.png"
+  - "https://hexo.io/pt-br/"
+1:
+-  "Gitlab"
+-  "/img/techstack/gitlab.png"
+-  "https://gitlab.com/"
+
+2:
+-  "Bootstrap"
+-  "/img/techstack/bootstrap.png"
+-  "https://getbootstrap.com.br/"
+
+
+3:
+-  "Nginx"
+-  "/img/techstack/nginx.png"
+-  "https://www.nginx.com/"
+
+
+4:
+- "Lightsail"
+- "/img/techstack/aws.png"
+-  "https://aws.amazon.com/pt/lightsail/"
+
+5:
+- "NodeJs"
+- "/img/techstack/node.png"
+-  "https://nodejs.org/en/"

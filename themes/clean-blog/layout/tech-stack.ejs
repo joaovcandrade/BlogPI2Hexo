@@ -49,54 +49,14 @@
             <!-- Post Main Content -->
             <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
              <div class="row">
-               <div class="col-12 col-md-3 p-1">
-                 <div class="text-center">
-                   <img src="https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" width="350" height="550"  class="rounded" alt="...">
-                   Hexo
+                 <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center" uk-grid>
+
+                        <% for (var obj in site.data.techstack) { %>
+                            <%- partial("_partial/img-techstack.ejs", {item: site.data.techstack[obj]}) %>
+                          <% } %>
+
                  </div>
-               </div>
-               <div class="col-12 col-md-3 p-1">
-                 <div class="text-center">
-                   <img src="https://img.icons8.com/color/420/gitlab.png" width="350" height="550"  class="rounded" alt="...">
-                   Gitlab
-                 </div>
-               </div>
-               <div class="col-12 col-md-3 p-1">
-                 <div class="text-center">
-                   <img src="https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/256/full/nodejslogo.png" width="350" height="550"  class="rounded" alt="...">
-                   Node.js
-                 </div>
-               </div>
-               <div class="col-12 col-md-3 p-1">
-                 <div class="text-center">
-                   <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" width="350" height="550"  class="rounded" alt="...">
-                   Git
-                 </div>
-               </div>
-               <div class="col-12 col-md-3 p-1">
-                 <div class="text-center">
-                   <img src="https://cdn.worldvectorlogo.com/logos/bootstrap-4.svg" width="350" height="550"  class="rounded" alt="...">
-                   Bootstrap
-                 </div>
-               </div>
-               <div class="col-12 col-md-3 p-1">
-                 <div class="text-center">
-                   <img src="https://pbs.twimg.com/profile_images/453956388851445761/8BKnRUXg.png" width="350" height="550"  class="rounded" alt="...">
-                   Gravatar
-                    </div>
-                   </div>
-                   <div class="col-12 col-md-3 p-1">
-                   <div class="text-center">
-                   <img src="https://ezerus.com.au/wp-content/uploads/2019/05/aws-logo-aws-new-logo-album-on-imgur-ideas.png" width="350" height="550"  class="rounded" alt="...">
-                   Amazon
-                    </div>
-                   </div>
-                   <div class="col-12 col-md-3 p-1">
-                   <div class="text-center">
-                   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Hostinger_logo.png/250px-Hostinger_logo.png" width="350" height="550"  class="rounded" alt="...">
-                   Hostinger
-                 </div>
-               </div>
+              
              </div>
 
 
