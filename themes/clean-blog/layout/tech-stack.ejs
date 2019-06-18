@@ -1,5 +1,5 @@
-<!-- Page Header -->
-<!-- Set your background image for this header in your post front-matter: cover -->
+<!-- Cabeçalho de pagina -->
+<!-- Defina sua imagem de plano de fundo para esse cabeçalho em sua postagem: capa -->
 <%
     var cover = item.cover || theme.index_cover;
 %>
@@ -20,12 +20,12 @@
     </div>
 </header>
 
-<!-- Post Content -->
+<!-- Publicar conteúdo -->
 <article>
     <div class="container">
         <div class="row">
 
-            <!-- Tags and categories -->
+            <!-- Tags e categorias -->
            <% if (item.categories && item.categories.length || item.tags && item.tags.length) { %>
                 <div class="col-lg-4 offset-lg-2 col-md-5 offset-md-1 post-tags">
                     <% if (item.tags && item.tags.length){ %>
@@ -41,12 +41,12 @@
                 </div>
             <% } %>
 
-            <!-- Gallery -->
+            <!-- Galeria -->
             <% if (item.photos && item.photos.length){ %>
                 <%- partial('gallery') %>
             <% } %>
 
-            <!-- Post Main Content -->
+            <!-- Postar conteúdo principal -->
 
 
                  <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
@@ -61,15 +61,15 @@
 
 
                 <% if(theme.addthis) { %>
-                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <!-- Vamos para www.addthis.com/dashboard para personalizar suas ferramentas -->
                     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=<%- theme.addthis %>"></script>
 
-                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <!-- Vamos para www.addthis.com/dashboard para personalizar suas ferramentas -->
                     <div class="addthis_sharing_toolbox"></div>
                 <% } %>
             </div>
 
-            <!-- Comments -->
+            <!-- Comentarios -->
             <% if (item.comment != false) { %>
                 <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
                     <%- partial("_partial/comments.ejs") %>
