@@ -5,15 +5,15 @@ menu:
   Projetos pessoais: /Projetos-pessoais
   Tech Stack: /Tech-Stack
   Apresentacao pessoal: /Apresentacao-pessoal
-  Gitlab:
-    url: http://trab.dc.unifil.br/gitlab/grupo-pastel/blog-pi-2.git
-    icon: gitlab
+  Github:
+    url: https://github.com/joaovcandrade/BlogPI2Hexo
+    icon: github
 
 # Title on top left of menu. Leave empty to use main blog title
 menu_title: Blog PI 2
 
 # URL of the Home page image
-index_cover: /img/start.jpg
+index_cover: /BlogPI2Hexo/img/start.jpg
 
 # Default post title
 default_post_title: Untitled
@@ -42,6 +42,6 @@ twitter_url:
 twitter_handle:
 facebook_url:
 github_url:
-gitlab_url: http://trab.dc.unifil.br/gitlab/grupo-pastel/blog-pi-2.git
+gitlab_url: https://github.com/joaovcandrade/BlogPI2Hexo
 linkedin_url:
 mailto:
