@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="Instalando certificado SSL no NginxPara instalarmos o certificado SSL, precisamos de uma certificadora que nos forneça o certificado para que o navega">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="João Vitor da Costa Andrade,Juan Pablo Rius Gonzalez,José Thierris Cuba,Rafael Bueno Sequiguti">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Instalando certificado SSL no Nginx">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Instalando certificado SSL no NginxPara instalarmos o certificado SSL, precisamos de uma certificadora que nos forneça o certificado para que o navega">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Blog PI 2">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.com/img/start.jpg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.com/img/start.jpg">
+    
+
+    <!-- Title -->
+    
+    <title>Instalando certificado SSL no Nginx - Blog PI 2</title>
+
+    <!-- Jquery -->
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/css/uikit.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+          <a class="navbar-brand" href="/">Blog PI 2</a>
+<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">
+                            
+                                Blog
+                            
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/archives">
+                            
+                                Arquivos
+                            
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Projetos-pessoais">
+                            
+                                Projetos pessoais
+                            
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Tech-Stack">
+                            
+                                Tech Stack
+                            
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Apresentacao-pessoal">
+                            
+                                Apresentacao pessoal
+                            
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://trab.dc.unifil.br/gitlab/grupo-pastel/blog-pi-2.git">
+                            
+                                <i class="fa fa-gitlab fa-stack-2x position-relative"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/start.jpg')">
+    <div class="uk-overlay uk-overlay-default uk-position-bottom p-0">
+      <span class="meta d-flex d-flex align-items-center col-12 m-3 mb-2">
+        <img src="https://www.gravatar.com/avatar/67e1008a6798af896baac33a5f4cc370?s=50" alt="" class="uk-border-circle uk-active">
+            <div class="d-flex flex-column p-2">
+              Postado por João Vitor C. Andrade em 17-06-2019
+              
+              <br>
+              <b><span class="updated" value="Tue Sep 10 2019 16:14:50 GMT-0300 (GMT-03:00)"></span></b>
+              
+            </div>
+      </span>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <div class="post-heading">
+                    <h1 class="text-white">Instalando certificado SSL no Nginx</h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- info -->
+
+
+
+<!-- Post Content -->
+<article>
+
+    <div class="container">
+          <div class="row">
+
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <h1 id="Instalando-certificado-SSL-no-Nginx"><a href="#Instalando-certificado-SSL-no-Nginx" class="headerlink" title="Instalando certificado SSL no Nginx"></a>Instalando certificado SSL no Nginx</h1><p>Para instalarmos o certificado <strong>SSL</strong>, precisamos de uma certificadora que nos forneça o certificado para que o navegador web reconheça a autenticidade do nosso site.</p>
+<p>Geralmente certificadoras cobram um valor para emitir esse certificado, e na maioria dos casos esse valor é bem elevado e pra piorar, o certificado precisa ser renovado periodicamente por um certo valor, mas há luz no fim do túnel, com o <strong>Let’s Encrypt.</strong></p>
+<p>O <strong>Let’s Encrypt</strong> é uma certificadora sem fins lucrativos criada em 2016 que emite certificados gratuitamente e toda essa emissão e renovação é automatizada através do <strong>Certbot</strong>. Por trás dessa certificadora está a linux foundation e é apoiado e mantido por grandes empresas como Chrome, Mozilla, Facebook, Red Hat, entre outros.</p>
+<img src="/post/2019/06/17/Instalando-certificado-SSL-no-Nginx/logolets.png">
+<p>Com o <strong>Let’s Encrypt</strong> na área não tem desculpa, comunicação encriptada <em>(HTTPS)</em> é quase que obrigatório para quem quiser colocar qualquer conteúdo na web de forma segura.</p>
+<h2 id="1-Configuracao-do-Nginx"><a href="#1-Configuracao-do-Nginx" class="headerlink" title="1 - Configuração do Nginx"></a>1 - Configuração do Nginx</h2><p>Antes de tudo, verifique se eu <strong>Nginx</strong> está configurado corretamente:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo nginx -t</span><br></pre></td></tr></table></figure>
+<p>Caso acuse algum erro, vá até este <a href="/post/2019/06/17/Instalando-Nginx-no-Ubuntu/">post</a> e tente novamente.</p>
+<h2 id="2-Instalando-o-Certbot"><a href="#2-Instalando-o-Certbot" class="headerlink" title="2- Instalando o Certbot"></a>2- Instalando o Certbot</h2><p>Vamos primeiro instalar o <strong>Cerbot</strong>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:certbot/certbot</span><br></pre></td></tr></table></figure>
+<p>Confirme os passos e depois atualize os pacotes:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt update</span><br></pre></td></tr></table></figure>
+<p>Agora instalamos o <strong>Certbot</strong> para <strong>Nginx</strong>:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install python-certbot-nginx</span><br></pre></td></tr></table></figure>
+<h2 id="3-liberando-o-firewall"><a href="#3-liberando-o-firewall" class="headerlink" title="3 - liberando o firewall"></a>3 - liberando o firewall</h2><p>Ok, <strong>Certbot</strong> instalado, agora vamos liberar o <strong><em>firewall</em></strong> para que o <strong>Nginx</strong> tenha permissão de usar o HTTPS.</p>
+<p>verifique com:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo ufw status</span><br></pre></td></tr></table></figure>
+<p>Caso não há nada liberado para o <strong>Nginx</strong>, para liberar <strong><em>HTTP</em></strong> e <strong><em>HTTPS</em></strong>, use somente:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo ufw allow <span class="string">'Nginx Full'</span></span><br></pre></td></tr></table></figure>
+<p>Caso algo já esteja liberado, para deletar, use o comando acima com:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo ufw delete allow <span class="string">'Nginx HTTP'</span></span><br></pre></td></tr></table></figure>
+<p>ou</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo ufw delete allow <span class="string">'Nginx HTTPS'</span></span><br></pre></td></tr></table></figure>
+<p>No fim, a saída de status deve ficar algo parecido com:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo ufw status</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>Output</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Status: active</span><br><span class="line"></span><br><span class="line">To                         Action      From</span><br><span class="line"></span><br><span class="line">--                         ------      ----</span><br><span class="line"></span><br><span class="line">OpenSSH                    ALLOW       Anywhere                  </span><br><span class="line"></span><br><span class="line">Nginx Full                 ALLOW       Anywhere                  </span><br><span class="line"></span><br><span class="line">OpenSSH (v6)               ALLOW       Anywhere (v6)             </span><br><span class="line"></span><br><span class="line">Nginx Full (v6)            ALLOW       Anywhere (v6)</span><br></pre></td></tr></table></figure>
+<h2 id="4-Adquirindo-o-certificado"><a href="#4-Adquirindo-o-certificado" class="headerlink" title="4 - Adquirindo o certificado"></a>4 - Adquirindo o certificado</h2><p>Vamos fazer o <strong>Cerbot</strong> emitir um certificado válido para nosso domínio, utilizando um plugin para <strong>Nginx</strong>:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo certbot --nginx -d meuexemplo.com -d www.meuexemplo.com</span><br></pre></td></tr></table></figure>
+<p><em>troque<strong> meuexemplo.com </strong>pelo<strong> </strong>seu<strong> domínio</strong></em></p>
+<p><strong>-d</strong> : indica os nomes que queremos que o certificado abranja.</p>
+<p>Caso seja a primeira execução, pedirá um e-mail que será usado para notificar quando o certificado está para expirar ou ocorrer algum erro, por isso coloque um e-mail válido.</p>
+<p>Depois o <strong>Certbot</strong> vai verificar se o domínio pelo qual está pedindo certificado é seu. Caso dê erro nesse processo ou não configurou o domínio visite esse <a href="/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/">post</a>.</p>
+<p>Ao fim o Certbot perguntará se você gostaria de redirecionar requisições via <strong>HTTP</strong> <em>(não encriptado)</em> para <strong><em>HTTPS</em></strong> <em>(encriptado)</em>.</p>
+ <figure class="highlight plain"><figcaption><span>Output</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Please choose whether or not to redirect HTTP traffic to HTTPS, removing HTTP access.</span><br><span class="line"></span><br><span class="line">-------------------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">1: No redirect - Make no further changes to the webserver configuration.</span><br><span class="line"></span><br><span class="line">2: Redirect - Make all requests redirect to secure HTTPS access. Choose this for</span><br><span class="line"></span><br><span class="line">new sites, or if you&apos;re confident your site works on HTTPS. You can undo this</span><br><span class="line"></span><br><span class="line">change by editing your web server&apos;s configuration.</span><br><span class="line"></span><br><span class="line">-------------------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">Select the appropriate number [1-2] then [enter] (press &apos;c&apos; to cancel):</span><br></pre></td></tr></table></figure>
+<p>Recomendo fortemente que escolha que redirecione, assim evita conexões inseguras e falhas de segurança. Escolha a opção desejada e pressione <strong>ENTER</strong>.</p>
+<p>O <strong>Certbot</strong> irá modificar o arquivo de configuração do site no <strong>Nginx</strong> para suportar o certificado <strong><em>SSL</em></strong> e comunicação <strong><em>HTTPS</em></strong> automaticamente</p>
+<h2 id="5-Renovacao-do-certificado"><a href="#5-Renovacao-do-certificado" class="headerlink" title="5 - Renovação do certificado"></a>5 - Renovação do certificado</h2><p>O certificado expira a cada <em>90 dias</em>, mas o <strong>Certbot</strong> automatiza a renovação. Teste se o <em>script</em> de renovação automática está funcionando corretamente</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo certbot renew --dry-run</span><br></pre></td></tr></table></figure>
+<h2 id="6-Testando-o-acesso"><a href="#6-Testando-o-acesso" class="headerlink" title="6 - Testando o acesso"></a>6 - Testando o acesso</h2><p>Agora é hora de testar o <em>https</em>, vá até o navegador e digite <a href="https://meuexemplo.com" target="_blank" rel="noopener">https://meuexemplo.com</a> e <a href="https://www.meuexemplo.com" target="_blank" rel="noopener">https://www.meuexemplo.com</a>, e verifique se o site carrega. Verifique se acessando utilizando <em>http://</em>  é redirecionado ou não, de acordo com sua escolha no <strong>Cerbot.</strong></p>
+<p><strong>Pronto!</strong> Certificado instalado.</p>
+
+
+                
+
+                <div class="row">
+                  <!-- Tags and categories -->
+                  
+                </div>
+
+
+
+                <!-- author -->
+                <hr>
+                <article class="uk-card-default uk-card-body">
+                  <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
+                      <div class="uk-width-auto">
+                          <img class="uk-comment-avatar rounded-circle float" src="https://www.gravatar.com/avatar/67e1008a6798af896baac33a5f4cc370" width="80" height="80" alt="">
+                      </div>
+                      <div class="uk-width-expand">
+                          <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">João Vitor C. Andrade</a></h4>
+                          <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                              <li><a class="uk-link-reset cl-ct" href="#">10-09-2019</a></li>
+                              <li><a class="uk-link-reset cl-ct" href="mailto:jvcostaandrade7399@gmail.com"><i uk-icon="icon: mail" aria-hidden="true"></i> E-mail</a></li>
+                          </ul>
+                      </div>
+                  </header>
+                  <div class="uk-comment-body">
+                    <footer class="blockquote-footer p-0">
+                    <small class="text-left font-italic">
+                        Graduando em Ciência da computação - Unifil
+                    </small>
+                  </footer>
+                  </div>
+              </article>
+
+            </div>
+
+
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    
+    <hr />
+    <h3>Comentários:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <ul class="list-inline text-xs-center d-flex justify-content-center">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="http://trab.dc.unifil.br/gitlab/grupo-pastel/blog-pi-2.git" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2019 João Vitor da Costa Andrade,Juan Pablo Rius Gonzalez,José Thierris Cuba,Rafael Bueno Sequiguti<br></p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- UIkit JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/js/uikit-icons.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Menu -->
+<script src="/js/menu.js"></script>
+<script src="/js/moment.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'pi2-1';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

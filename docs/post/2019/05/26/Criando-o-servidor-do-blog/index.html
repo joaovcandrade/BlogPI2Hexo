@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="Criando o servidor para o blog.Escolha do servidorPara a escolha do servidor, analisamos 5 opções: Amazon AWS, Microsoft Azure, Google Cloud, Digital ">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="João Vitor da Costa Andrade,Juan Pablo Rius Gonzalez,José Thierris Cuba,Rafael Bueno Sequiguti">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Criando o servidor do blog">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Criando o servidor para o blog.Escolha do servidorPara a escolha do servidor, analisamos 5 opções: Amazon AWS, Microsoft Azure, Google Cloud, Digital ">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Blog PI 2">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.com/img/start.jpg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.com/img/start.jpg">
+    
+
+    <!-- Title -->
+    
+    <title>Criando o servidor do blog - Blog PI 2</title>
+
+    <!-- Jquery -->
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/css/uikit.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+          <a class="navbar-brand" href="/">Blog PI 2</a>
+<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">
+                            
+                                Blog
+                            
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/archives">
+                            
+                                Arquivos
+                            
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Projetos-pessoais">
+                            
+                                Projetos pessoais
+                            
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Tech-Stack">
+                            
+                                Tech Stack
+                            
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Apresentacao-pessoal">
+                            
+                                Apresentacao pessoal
+                            
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://trab.dc.unifil.br/gitlab/grupo-pastel/blog-pi-2.git">
+                            
+                                <i class="fa fa-gitlab fa-stack-2x position-relative"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/start.jpg')">
+    <div class="uk-overlay uk-overlay-default uk-position-bottom p-0">
+      <span class="meta d-flex d-flex align-items-center col-12 m-3 mb-2">
+        <img src="https://www.gravatar.com/avatar/3a43aa8ff01b1bfbe30a28f425d10232?s=50" alt="" class="uk-border-circle uk-active">
+            <div class="d-flex flex-column p-2">
+              Postado por José Thierris Cuba em 26-05-2019
+              
+              <br>
+              <b><span class="updated" value="Tue Sep 10 2019 16:14:50 GMT-0300 (GMT-03:00)"></span></b>
+              
+            </div>
+      </span>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <div class="post-heading">
+                    <h1 class="text-white">Criando o servidor do blog</h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- info -->
+
+
+
+<!-- Post Content -->
+<article>
+
+    <div class="container">
+          <div class="row">
+
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <h2 id="Criando-o-servidor-para-o-blog"><a href="#Criando-o-servidor-para-o-blog" class="headerlink" title="Criando o servidor para o blog."></a>Criando o servidor para o blog.</h2><h3 id="Escolha-do-servidor"><a href="#Escolha-do-servidor" class="headerlink" title="Escolha do servidor"></a>Escolha do servidor</h3><p>Para a escolha do servidor, analisamos 5 opções: <strong>Amazon AWS, Microsoft Azure, Google Cloud, Digital Ocean e Vultr</strong>. Dentre todas as opções, optamos por usar o <strong>AWS</strong>, devido oferecer servidores por preço baixo, tempo de uso gratuito, entre outras vantagens.</p>
+<h3 id="Servidores-da-Amazon"><a href="#Servidores-da-Amazon" class="headerlink" title="Servidores da Amazon"></a>Servidores da Amazon</h3><p>A <strong>AWS (Amazon Web Services)</strong> é uma plataforma de nuvem que possui diversas funcionalidades e mais de 165 serviços. Olhando a funcionalidades de cada serviços, a mais adequada para o nosso objetivo é o <strong>Amazon lightsail</strong>, pois além de oferecer um mês de gratuidade, é uma plataforma para criação rápida e simplificada de servidores virtuais, que de início possui um ambiente de rede, acesso e segurança de fácil configuração.</p>
+<p>Uma grande vantagem do <strong>Lightsail</strong>, é que pode ser facilmente usado para ambiente de desenvolvimento rápido e, se necessário, os servidores podem ser fácilmente transferido para a plataforma <strong>EC2</strong>, que possui maiores recursos e o poder de escalabilidade da <strong>Amazon</strong>, que podem ser necessários em uma ambiente de produção</p>
+<img src="/post/2019/05/26/Criando-o-servidor-do-blog/img1.jpeg">
+<h3 id="Instanciando-o-servidor"><a href="#Instanciando-o-servidor" class="headerlink" title="Instânciando o servidor"></a>Instânciando o servidor</h3><p>Após entrar/criar conta na AWS e entrar na página da <strong>Amazon Lightsail</strong> e escolher a região do servidor, clique em <strong><em>create instanse</em></strong>.</p>
+<p>Selecione o local de instância do servidor, a plataforma e em seguida a imagem do sistema operacional pura ou com apps.</p>
+<p>Para o servidor do blog, optamos por instanciar o servidor com somente o <strong>Ubuntu</strong>.</p>
+<img src="/post/2019/05/26/Criando-o-servidor-do-blog/img2.png">
+<p>Em seguida, vem a seleção do plano, chave ssh e o nome do servidor. Para o blog, deixamos no padrão.</p>
+<p>Após todo esse processo, clique em criar <strong><em>create instance</em></strong>.</p>
+<p>Você deve encontrar algo parecido com isso:</p>
+<img src="/post/2019/05/26/Criando-o-servidor-do-blog/img3.png">
+<p>Pronto!, servidor instanciado. Simples, não?</p>
+
+
+                
+
+                <div class="row">
+                  <!-- Tags and categories -->
+                  
+                </div>
+
+
+
+                <!-- author -->
+                <hr>
+                <article class="uk-card-default uk-card-body">
+                  <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
+                      <div class="uk-width-auto">
+                          <img class="uk-comment-avatar rounded-circle float" src="https://www.gravatar.com/avatar/3a43aa8ff01b1bfbe30a28f425d10232" width="80" height="80" alt="">
+                      </div>
+                      <div class="uk-width-expand">
+                          <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">José Thierris Cuba</a></h4>
+                          <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                              <li><a class="uk-link-reset cl-ct" href="#">10-09-2019</a></li>
+                              <li><a class="uk-link-reset cl-ct" href="mailto:thierris@gmail.com"><i uk-icon="icon: mail" aria-hidden="true"></i> E-mail</a></li>
+                          </ul>
+                      </div>
+                  </header>
+                  <div class="uk-comment-body">
+                    <footer class="blockquote-footer p-0">
+                    <small class="text-left font-italic">
+                        Graduando em Ciência da computação - Unifil
+                    </small>
+                  </footer>
+                  </div>
+              </article>
+
+            </div>
+
+
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    
+    <hr />
+    <h3>Comentários:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <ul class="list-inline text-xs-center d-flex justify-content-center">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="http://trab.dc.unifil.br/gitlab/grupo-pastel/blog-pi-2.git" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2019 João Vitor da Costa Andrade,Juan Pablo Rius Gonzalez,José Thierris Cuba,Rafael Bueno Sequiguti<br></p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- UIkit JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/js/uikit-icons.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Menu -->
+<script src="/js/menu.js"></script>
+<script src="/js/moment.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'pi2-1';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
