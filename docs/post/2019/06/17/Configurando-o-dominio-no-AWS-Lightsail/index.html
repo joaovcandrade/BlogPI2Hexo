@@ -42,7 +42,7 @@
     <!--Page Cover-->
     
     
-        <meta property="og:image" content="http://yoursite.com/img/start.jpg">
+        <meta property="og:image" content="https://joaovcandrade.github.io/BlogPI2Hexo/BlogPI2Hexo/img/start.jpg">
     
 
         <meta name="twitter:card" content="summary_large_image">
@@ -50,7 +50,7 @@
     
 
     
-        <meta name="twitter:image" content="http://yoursite.com/img/start.jpg">
+        <meta name="twitter:image" content="https://joaovcandrade.github.io/BlogPI2Hexo/BlogPI2Hexo/img/start.jpg">
     
 
     <!-- Title -->
@@ -155,9 +155,9 @@
                     </li>
                 
                     <li class="nav-item">
-                        <a class="nav-link" href="http://trab.dc.unifil.br/gitlab/grupo-pastel/blog-pi-2.git">
+                        <a class="nav-link" href="https://github.com/joaovcandrade/BlogPI2Hexo">
                             
-                                <i class="fa fa-gitlab fa-stack-2x position-relative"></i>
+                                <i class="fa fa-github fa-stack-2x position-relative"></i>
                             
                         </a>
                     </li>
@@ -174,7 +174,7 @@
     <!-- Page Header -->
 <!-- Set your background image for this header in your post front-matter: cover -->
 
-<header class="intro-header" style="background-image: url('/img/start.jpg')">
+<header class="intro-header" style="background-image: url('/BlogPI2Hexo/img/start.jpg')">
     <div class="uk-overlay uk-overlay-default uk-position-bottom p-0">
       <span class="meta d-flex d-flex align-items-center col-12 m-3 mb-2">
         <img src="https://www.gravatar.com/avatar/67e1008a6798af896baac33a5f4cc370?s=50" alt="" class="uk-border-circle uk-active">
@@ -218,33 +218,33 @@
                 <h1 id="Configurando-o-dominio-no-AWS-Lightsail"><a href="#Configurando-o-dominio-no-AWS-Lightsail" class="headerlink" title="Configurando o domínio no AWS Lightsail"></a>Configurando o domínio no AWS Lightsail</h1><h2 id="1-Escolhendo-do-dominio"><a href="#1-Escolhendo-do-dominio" class="headerlink" title="1-Escolhendo do domínio"></a>1-Escolhendo do domínio</h2><p>Antes de fazer de qualquer coisa, obviamente temos que ter um domínio em mão para trabalhar</p>
 <p>O domínio pode ser adquirido em diversos sites que o registram, como por exemplo o <em><em>registro.br</em></em> que registra domínios <em><em>.com.br</em></em>.</p>
 <p>Para este blog escolhemos comprar o domínio <em>pi2.online</em> na <em>hostinger</em>, devido o preço baixo por um nome de domínio amigável (os domínios mais baratos são nomes bizarros), mas poderia ser qualquer nome e qualquer domínio.</p>
-<img src="/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/hostinger.png">
+<img src="/BlogPI2Hexo/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/hostinger.png">
 <h2 id="2-Hospedando-o-dominio-no-servidor"><a href="#2-Hospedando-o-dominio-no-servidor" class="headerlink" title="2- Hospedando o domínio no servidor"></a>2- Hospedando o domínio no servidor</h2><p>Agora vamos, para termos todo o controle do domínio diretamente no nosso servidor, por isso hospedar lá. Primeiramente precisamos criar uma <em>zona DNS</em> na <strong>AWS</strong>, para que possamos receber os servidores de nomes que direcionaram nosso domínio para ela.</p>
 <p> Este procedimento está sendo realizado na <strong>AWS</strong> porém em qualquer hospedagem, o processo é, ou deveria ser, parecido.</p>
 <p>Para isso vamos acessar a página do <strong><em>Lightsail</em></strong> na <strong>AWS</strong> e clicar na seção <em>Redes</em></p>
-<img src="/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/lights.png">
+<img src="/BlogPI2Hexo/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/lights.png">
 <p>Em <em>redes</em>, clique em <em>“Criar zona DNS”</em></p>
-<img src="/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/czona.png">
+<img src="/BlogPI2Hexo/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/czona.png">
 <p>Digite o domínio registrado no passo 1 e clique em <em>“Criar zona DNS”</em> para confirmar.</p>
-<img src="/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/reg1.png">
-<img src="/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/reg2.png">
+<img src="/BlogPI2Hexo/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/reg1.png">
+<img src="/BlogPI2Hexo/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/reg2.png">
 <p>Você será redirecionado a uma nova página. Agora é hora de criar um registro, para direcionar traduzir o domínio no ip do servidor.</p>
 <p>Para isso, clique em <em>“Adicionar registro”</em></p>
 <p>no campo subdomínio, coloque _@_, e no campo “é resolvido em”, coloque o ip do servidor ou clique no servidor que aparecerá automáticamente.</p>
-<img src="/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/nreg1.png">
+<img src="/BlogPI2Hexo/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/nreg1.png">
 <p>O <strong><em>@</em></strong> indica a própria raiz, pois não queremos acessar o servidor de um subdomínio (mas é possível), ou seja, quem acessar o pi2.online  na verdade estará sendo encaminhado ao servidor.</p>
 <p> Mas e que acessar usando o <em>“www”</em>, como <em>“<a href="www.pi2.online">www.pi2.online</a>”</em> ?, nesse caso temos que fazer mais uma configuração. Clique novamente em <em>“Adicionar registro”</em> e no campo subdomínio, adicione <em>“www”</em> (sem aspas), e em <em>“é resolvido em”</em>, pode colocar o ip do servidor novamente.</p>
- <img src="/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/nreg2.png">
+ <img src="/BlogPI2Hexo/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/nreg2.png">
 <p>Agora sim!, independentemente de o usuário digitar o domínio com <em>“www”</em> ou sem, ele estará acessando o servidor.</p>
 <p>Antes de sair da página, ao final dela, você encontrará algo parecido com isso:</p>
-<img src="/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/sn.png">
+<img src="/BlogPI2Hexo/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/sn.png">
 <p>Salve esses dados, é importante para o próximo passo.</p>
 <p>Toda configuração na <strong>AWS</strong> está finalizada, agora é hora de configurar direto onde o <em>domínio</em> foi registrado e hospedado.</p>
 <h2 id="3-Configurando-Servidores-de-nome-no-dominio"><a href="#3-Configurando-Servidores-de-nome-no-dominio" class="headerlink" title="3 - Configurando Servidores de nome no domínio"></a>3 - Configurando Servidores de nome no domínio</h2><p>Agora vamos alterar o servidores de nomes do domínio para que o domínio seja hospedado na <strong>AWS</strong>. Entrando no site onde o <em>domínio</em> foi comprado, procure por editar ”<em>zona DNS do domínio”</em> ou algo parecido.</p>
-<img src="/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/nreg1.png">
+<img src="/BlogPI2Hexo/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/nreg1.png">
 <p>Agora procure pela seção que indique <em>“NS”</em>, <em>“Nameserver”</em> ou <em>“Servidor de nome”</em></p>
 <p>Substitua todos esses dados por aqueles dados de <em>“Name server”</em> que obtemos ao configurar a <em>zona DNS na <strong>AWS</strong></em>.</p>
-<img src="/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/nms.png">
+<img src="/BlogPI2Hexo/post/2019/06/17/Configurando-o-dominio-no-AWS-Lightsail/nms.png">
 <p>Agora você pode testar se está funcionando acessando o domínio. Caso o domínio esteja retornando <em>erro</em> ao acessar ou não está retornando o que é esperado, não se preocupe, pode demorar até <em>72h</em> para que todo esse processo finalize completamente.</p>
 <p><strong>Pronto!</strong>, agora o domínio está hospedado na <strong>AWS</strong>, e a <em>zona DNS</em> da <strong>AWS</strong> está configurada para apontar para o nosso servidor.</p>
 
@@ -326,7 +326,7 @@
 
                     
                         <li>
-                            <a href="http://trab.dc.unifil.br/gitlab/grupo-pastel/blog-pi-2.git" target="_blank">
+                            <a href="https://github.com/joaovcandrade/BlogPI2Hexo" target="_blank">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
