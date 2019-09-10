@@ -17,7 +17,7 @@ timezone: America/Sao_Paulo
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://joaovcandrade.github.io/BlogPI2Hexo/
 root: /BlogPI2Hexo/
 permalink: post/:year/:month/:day/:title/
 permalink_defaults:
